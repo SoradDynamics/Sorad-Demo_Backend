@@ -1,0 +1,2838 @@
+[
+  {
+    "collection": {
+      "id": "coll-faculty",
+      "name": "faculty",
+      "documentSecurity": true,
+      "permissions": [
+      { "label": "admin", "actions": ["read", "create", "update", "delete"] },
+      { "label": "any", "actions": ["read"] }
+    ]
+    },
+    "attributes": [
+      {
+        "key": "id",
+        "type": "string",
+        "required": true,
+        "array": false,
+        "default": null,
+        "size": 20,
+        "min": null,
+        "max": null,
+        "format": null,
+        "options": null
+      },
+      {
+        "key": "name",
+        "type": "string",
+        "required": true,
+        "array": false,
+        "default": null,
+        "size": 100,
+        "min": null,
+        "max": null,
+        "format": null,
+        "options": null
+      },
+      {
+        "key": "classes",
+        "type": "string",
+        "required": false,
+        "array": true,
+        "default": null,
+        "size": 100,
+        "min": null,
+        "max": null,
+        "format": null,
+        "options": null
+      }
+    ],
+    "indexes": []
+  },
+  {
+    "collection": {
+      "id": "coll-section",
+      "name": "section",
+      "documentSecurity": true,
+      "permissions": [
+      { "label": "admin", "actions": ["read", "create", "update", "delete"] },
+      { "label": "any", "actions": ["read"] }
+    ]
+    },
+    "attributes": [
+      {
+        "key": "id",
+        "type": "string",
+        "required": true,
+        "array": false,
+        "default": null,
+        "size": 20,
+        "min": null,
+        "max": null,
+        "format": null,
+        "options": null
+      },
+      {
+        "key": "name",
+        "type": "string",
+        "required": true,
+        "array": false,
+        "default": null,
+        "size": 50,
+        "min": null,
+        "max": null,
+        "format": null,
+        "options": null
+      },
+      {
+        "key": "subjects",
+        "type": "string",
+        "required": false,
+        "array": true,
+        "default": null,
+        "size": 50,
+        "min": null,
+        "max": null,
+        "format": null,
+        "options": null
+      },
+      {
+        "key": "class",
+        "type": "string",
+        "required": true,
+        "array": false,
+        "default": null,
+        "size": 50,
+        "min": null,
+        "max": null,
+        "format": null,
+        "options": null
+      },
+      {
+        "key": "facultyId",
+        "type": "string",
+        "required": false,
+        "array": false,
+        "default": null,
+        "size": 20,
+        "min": null,
+        "max": null,
+        "format": null,
+        "options": null
+      },
+      {
+        "key": "class_teacher",
+        "type": "string",
+        "required": false,
+        "array": false,
+        "default": null,
+        "size": 50,
+        "min": null,
+        "max": null,
+        "format": null,
+        "options": null
+      }
+    ],
+    "indexes": []
+  },
+  {
+    "collection": {
+      "id": "coll-student",
+      "name": "student",
+      "documentSecurity": true,
+      "permissions": [
+      { "label": "admin", "actions": ["read", "create", "update", "delete"] },
+      { "label": "student", "actions": ["read", "update"] },
+      { "label": "teacher", "actions": ["read", "update"] },
+      { "label": "parent", "actions": ["read", "update"] },
+      { "label": "library", "actions": ["read", "update"] }
+
+    ]
+    },
+    "attributes": [
+      {
+        "key": "id",
+        "type": "string",
+        "required": true,
+        "array": false,
+        "default": null,
+        "size": 100,
+        "min": null,
+        "max": null,
+        "format": null,
+        "options": null
+      },
+      {
+        "key": "name",
+        "type": "string",
+        "required": true,
+        "array": false,
+        "default": null,
+        "size": 20,
+        "min": null,
+        "max": null,
+        "format": null,
+        "options": null
+      },
+      {
+        "key": "class",
+        "type": "string",
+        "required": true,
+        "array": false,
+        "default": null,
+        "size": 20,
+        "min": null,
+        "max": null,
+        "format": null,
+        "options": null
+      },
+      {
+        "key": "facultyId",
+        "type": "string",
+        "required": false,
+        "array": false,
+        "default": null,
+        "size": 20,
+        "min": null,
+        "max": null,
+        "format": null,
+        "options": null
+      },
+      {
+        "key": "section",
+        "type": "string",
+        "required": false,
+        "array": false,
+        "default": null,
+        "size": 20,
+        "min": null,
+        "max": null,
+        "format": null,
+        "options": null
+      },
+      {
+        "key": "stdEmail",
+        "type": "string",
+        "required": false,
+        "array": false,
+        "default": null,
+        "size": 50,
+        "min": null,
+        "max": null,
+        "format": null,
+        "options": null
+      },
+      {
+        "key": "parentId",
+        "type": "string",
+        "required": false,
+        "array": false,
+        "default": null,
+        "size": 50,
+        "min": null,
+        "max": null,
+        "format": null,
+        "options": null
+      },
+      {
+        "key": "absent",
+        "type": "string",
+        "required": false,
+        "array": true,
+        "default": null,
+        "size": 20,
+        "min": null,
+        "max": null,
+        "format": null,
+        "options": null
+      },
+      {
+        "key": "leave",
+        "type": "string",
+        "required": false,
+        "array": true,
+        "default": null,
+        "size": 1000,
+        "min": null,
+        "max": null,
+        "format": null,
+        "options": null
+      },
+      {
+        "key": "result",
+        "type": "string",
+        "required": false,
+        "array": true,
+        "default": null,
+        "size": 1500,
+        "min": null,
+        "max": null,
+        "format": null,
+        "options": null
+      },
+      {
+        "key": "fee",
+        "type": "string",
+        "required": false,
+        "array": true,
+        "default": null,
+        "size": 200,
+        "min": null,
+        "max": null,
+        "format": null,
+        "options": null
+      },
+      {
+        "key": "library",
+        "type": "string",
+        "required": false,
+        "array": true,
+        "default": null,
+        "size": 150,
+        "min": null,
+        "max": null,
+        "format": null,
+        "options": null
+      },
+      {
+        "key": "assignment",
+        "type": "string",
+        "required": false,
+        "array": true,
+        "default": null,
+        "size": 100,
+        "min": null,
+        "max": null,
+        "format": null,
+        "options": null
+      },
+      {
+        "key": "isLibraryMember",
+        "type": "boolean",
+        "required": false,
+        "array": false,
+        "default": false,
+        "size": null,
+        "min": null,
+        "max": null,
+        "format": null,
+        "options": null
+      }
+    ],
+    "indexes": [
+      {
+        "key": "insx_name",
+        "type": "fulltext",
+        "attributes": [
+          "name"
+        ],
+        "orders": [
+          "ASC"
+        ]
+      },
+      {
+        "key": "index_2",
+        "type": "fulltext",
+        "attributes": [
+          "id"
+        ],
+        "orders": [
+          "ASC"
+        ]
+      }
+    ]
+  },
+  {
+    "collection": {
+      "id": "coll-parent",
+      "name": "parent",
+      "documentSecurity": true,
+      "permissions": [
+      { "label": "admin", "actions": ["read", "create", "update", "delete"] },
+      { "label": "any", "actions": ["read"] }
+    ]
+    },
+    "attributes": [
+      {
+        "key": "id",
+        "type": "string",
+        "required": true,
+        "array": false,
+        "default": null,
+        "size": 50,
+        "min": null,
+        "max": null,
+        "format": null,
+        "options": null
+      },
+      {
+        "key": "name",
+        "type": "string",
+        "required": true,
+        "array": false,
+        "default": null,
+        "size": 50,
+        "min": null,
+        "max": null,
+        "format": null,
+        "options": null
+      },
+      {
+        "key": "email",
+        "type": "string",
+        "required": true,
+        "array": false,
+        "default": null,
+        "size": 50,
+        "min": null,
+        "max": null,
+        "format": null,
+        "options": null
+      },
+      {
+        "key": "contact",
+        "type": "string",
+        "required": false,
+        "array": true,
+        "default": null,
+        "size": 20,
+        "min": null,
+        "max": null,
+        "format": null,
+        "options": null
+      },
+      {
+        "key": "students",
+        "type": "string",
+        "required": false,
+        "array": true,
+        "default": null,
+        "size": 50,
+        "min": null,
+        "max": null,
+        "format": null,
+        "options": null
+      }
+    ],
+    "indexes": []
+  },
+  {
+    "collection": {
+      "id": "coll-calendar",
+      "name": "calendar",
+      "documentSecurity": true,
+      "permissions": [
+      { "label": "admin", "actions": ["read", "create", "update", "delete"] },
+      { "label": "any", "actions": ["read"] }
+    ]
+    },
+    "attributes": [
+      {
+        "key": "name",
+        "type": "string",
+        "required": true,
+        "array": false,
+        "default": null,
+        "size": 50,
+        "min": null,
+        "max": null,
+        "format": null,
+        "options": null
+      },
+      {
+        "key": "dates",
+        "type": "string",
+        "required": false,
+        "array": true,
+        "default": null,
+        "size": 50,
+        "min": null,
+        "max": null,
+        "format": null,
+        "options": null
+      },
+      {
+        "key": "holiday",
+        "type": "boolean",
+        "required": false,
+        "array": false,
+        "default": null,
+        "size": null,
+        "min": null,
+        "max": null,
+        "format": null,
+        "options": null
+      }
+    ],
+    "indexes": []
+  },
+  {
+    "collection": {
+      "id": "coll-drivers",
+      "name": "drivers",
+      "documentSecurity": true,
+      "permissions": [
+      { "label": "admin", "actions": ["read", "create", "update", "delete"] },
+      { "label": "any", "actions": ["read"] },
+      { "label": "driver", "actions": ["read", "update"]}
+    ]
+    },
+    "attributes": [
+      {
+        "key": "driverId",
+        "type": "string",
+        "required": true,
+        "array": false,
+        "default": null,
+        "size": 25,
+        "min": null,
+        "max": null,
+        "format": null,
+        "options": null
+      },
+      {
+        "key": "driverName",
+        "type": "string",
+        "required": true,
+        "array": false,
+        "default": null,
+        "size": 25,
+        "min": null,
+        "max": null,
+        "format": null,
+        "options": null
+      },
+      {
+        "key": "route",
+        "type": "string",
+        "required": false,
+        "array": false,
+        "default": null,
+        "size": 100,
+        "min": null,
+        "max": null,
+        "format": null,
+        "options": null
+      },
+      {
+        "key": "latitude",
+        "type": "string",
+        "required": false,
+        "array": false,
+        "default": null,
+        "size": 50,
+        "min": null,
+        "max": null,
+        "format": null,
+        "options": null
+      },
+      {
+        "key": "longitude",
+        "type": "string",
+        "required": false,
+        "array": false,
+        "default": null,
+        "size": 50,
+        "min": null,
+        "max": null,
+        "format": null,
+        "options": null
+      },
+      {
+        "key": "timestamp",
+        "type": "string",
+        "required": false,
+        "array": false,
+        "default": null,
+        "size": 50,
+        "min": null,
+        "max": null,
+        "format": null,
+        "options": null
+      },
+      {
+        "key": "email",
+        "type": "string",
+        "required": false,
+        "array": false,
+        "default": null,
+        "size": 30,
+        "min": null,
+        "max": null,
+        "format": null,
+        "options": null
+      },
+      {
+        "key": "authUserId",
+        "type": "string",
+        "required": false,
+        "array": false,
+        "default": null,
+        "size": 20,
+        "min": null,
+        "max": null,
+        "format": null,
+        "options": null
+      }
+    ],
+    "indexes": []
+  },
+  {
+    "collection": {
+      "id": "coll-exam",
+      "name": "exam",
+      "documentSecurity": true,
+      "permissions": [
+      { "label": "admin", "actions": ["read", "create", "update", "delete"] },
+      { "label": "any", "actions": ["read"] }
+    ]
+    },
+    "attributes": [
+      {
+        "key": "title",
+        "type": "string",
+        "required": false,
+        "array": false,
+        "default": null,
+        "size": 20,
+        "min": null,
+        "max": null,
+        "format": null,
+        "options": null
+      },
+      {
+        "key": "type",
+        "type": "string",
+        "required": false,
+        "array": false,
+        "default": null,
+        "size": 20,
+        "min": null,
+        "max": null,
+        "format": null,
+        "options": null
+      },
+      {
+        "key": "faculty",
+        "type": "string",
+        "required": false,
+        "array": true,
+        "default": null,
+        "size": 20,
+        "min": null,
+        "max": null,
+        "format": null,
+        "options": null
+      },
+      {
+        "key": "class",
+        "type": "string",
+        "required": false,
+        "array": true,
+        "default": null,
+        "size": 20,
+        "min": null,
+        "max": null,
+        "format": null,
+        "options": null
+      },
+      {
+        "key": "desc",
+        "type": "string",
+        "required": false,
+        "array": false,
+        "default": null,
+        "size": 1000,
+        "min": null,
+        "max": null,
+        "format": null,
+        "options": null
+      },
+      {
+        "key": "section",
+        "type": "string",
+        "required": false,
+        "array": true,
+        "default": null,
+        "size": 20,
+        "min": null,
+        "max": null,
+        "format": null,
+        "options": null
+      },
+      {
+        "key": "subjectDetails_json",
+        "type": "string",
+        "required": false,
+        "array": false,
+        "default": null,
+        "size": 25000,
+        "min": null,
+        "max": null,
+        "format": null,
+        "options": null
+      },
+      {
+        "key": "isGpa",
+        "type": "boolean",
+        "required": false,
+        "array": false,
+        "default": null,
+        "size": null,
+        "min": null,
+        "max": null,
+        "format": null,
+        "options": null
+      },
+      {
+        "key": "isPublished",
+        "type": "boolean",
+        "required": false,
+        "array": false,
+        "default": null,
+        "size": null,
+        "min": null,
+        "max": null,
+        "format": null,
+        "options": null
+      }
+    ],
+    "indexes": []
+  },
+  {
+    "collection": {
+      "id": "coll-routine",
+      "name": "routine",
+      "documentSecurity": true,
+      "permissions": [
+      { "label": "admin", "actions": ["read", "create", "update", "delete"] },
+      { "label": "any", "actions": ["read"] }
+    ]
+    },
+    "attributes": [
+      {
+        "key": "faculty",
+        "type": "string",
+        "required": false,
+        "array": false,
+        "default": null,
+        "size": 20,
+        "min": null,
+        "max": null,
+        "format": null,
+        "options": null
+      },
+      {
+        "key": "class",
+        "type": "string",
+        "required": false,
+        "array": false,
+        "default": null,
+        "size": 20,
+        "min": null,
+        "max": null,
+        "format": null,
+        "options": null
+      },
+      {
+        "key": "section",
+        "type": "string",
+        "required": false,
+        "array": false,
+        "default": null,
+        "size": 20,
+        "min": null,
+        "max": null,
+        "format": null,
+        "options": null
+      },
+      {
+        "key": "desc",
+        "type": "string",
+        "required": false,
+        "array": true,
+        "default": null,
+        "size": 1500,
+        "min": null,
+        "max": null,
+        "format": null,
+        "options": null
+      },
+      {
+        "key": "note",
+        "type": "string",
+        "required": false,
+        "array": true,
+        "default": null,
+        "size": 100,
+        "min": null,
+        "max": null,
+        "format": null,
+        "options": null
+      }
+    ],
+    "indexes": []
+  },
+  {
+    "collection": {
+      "id": "coll-teacher",
+      "name": "teacher",
+      "documentSecurity": true,
+      "permissions": [
+      { "label": "admin", "actions": ["read", "create", "update", "delete"] },
+      { "label": "any", "actions": ["read"] },
+      { "label":"library", "actions":["read", "update"]}
+    ]
+    },
+    "attributes": [
+      {
+        "key": "id",
+        "type": "string",
+        "required": false,
+        "array": false,
+        "default": null,
+        "size": 20,
+        "min": null,
+        "max": null,
+        "format": null,
+        "options": null
+      },
+      {
+        "key": "name",
+        "type": "string",
+        "required": false,
+        "array": false,
+        "default": null,
+        "size": 50,
+        "min": null,
+        "max": null,
+        "format": null,
+        "options": null
+      },
+      {
+        "key": "subject",
+        "type": "string",
+        "required": false,
+        "array": true,
+        "default": null,
+        "size": 30,
+        "min": null,
+        "max": null,
+        "format": null,
+        "options": null
+      },
+      {
+        "key": "level",
+        "type": "string",
+        "required": false,
+        "array": true,
+        "default": null,
+        "size": 20,
+        "min": null,
+        "max": null,
+        "format": null,
+        "options": null
+      },
+      {
+        "key": "qualification",
+        "type": "string",
+        "required": false,
+        "array": false,
+        "default": null,
+        "size": 50,
+        "min": null,
+        "max": null,
+        "format": null,
+        "options": null
+      },
+      {
+        "key": "base_salary",
+        "type": "string",
+        "required": false,
+        "array": false,
+        "default": null,
+        "size": 10,
+        "min": null,
+        "max": null,
+        "format": null,
+        "options": null
+      },
+      {
+        "key": "salary",
+        "type": "string",
+        "required": false,
+        "array": true,
+        "default": null,
+        "size": 100,
+        "min": null,
+        "max": null,
+        "format": null,
+        "options": null
+      },
+      {
+        "key": "assignemnts",
+        "type": "string",
+        "required": false,
+        "array": true,
+        "default": null,
+        "size": 1000,
+        "min": null,
+        "max": null,
+        "format": null,
+        "options": null
+      },
+      {
+        "key": "notes",
+        "type": "string",
+        "required": false,
+        "array": true,
+        "default": null,
+        "size": 500,
+        "min": null,
+        "max": null,
+        "format": null,
+        "options": null
+      },
+      {
+        "key": "email",
+        "type": "string",
+        "required": false,
+        "array": false,
+        "default": null,
+        "size": 28,
+        "min": null,
+        "max": null,
+        "format": null,
+        "options": null
+      },
+      {
+        "key": "authUserId",
+        "type": "string",
+        "required": false,
+        "array": false,
+        "default": null,
+        "size": 20,
+        "min": null,
+        "max": null,
+        "format": null,
+        "options": null
+      },
+      {
+        "key": "isLibraryMember",
+        "type": "boolean",
+        "required": false,
+        "array": false,
+        "default": false,
+        "size": null,
+        "min": null,
+        "max": null,
+        "format": null,
+        "options": null
+      }
+    ],
+    "indexes": [
+      {
+        "key": "index_1",
+        "type": "fulltext",
+        "attributes": [
+          "name"
+        ],
+        "orders": [
+          "ASC"
+        ]
+      },
+      {
+        "key": "index_2",
+        "type": "fulltext",
+        "attributes": [
+          "id"
+        ],
+        "orders": [
+          "ASC"
+        ]
+      }
+    ]
+  },
+  {
+    "collection": {
+      "id": "coll-notify",
+      "name": "notify",
+      "documentSecurity": true,
+      "permissions": [
+      { "label": "admin", "actions": ["read", "create", "update", "delete"] },
+      { "label": "any", "actions": ["read"] },
+      { "label": "student", "actions": ["read", "create"] },
+      { "label": "parent", "actions": ["read", "create"] },
+      { "label": "teacher", "actions": ["read", "create"] },
+      { "label": "library", "actions": ["create"] }
+
+
+    ]
+    },
+    "attributes": [
+      {
+        "key": "title",
+        "type": "string",
+        "required": false,
+        "array": false,
+        "default": null,
+        "size": 50,
+        "min": null,
+        "max": null,
+        "format": null,
+        "options": null
+      },
+      {
+        "key": "msg",
+        "type": "string",
+        "required": false,
+        "array": false,
+        "default": null,
+        "size": 1000,
+        "min": null,
+        "max": null,
+        "format": null,
+        "options": null
+      },
+      {
+        "key": "to",
+        "type": "string",
+        "required": false,
+        "array": true,
+        "default": null,
+        "size": 100,
+        "min": null,
+        "max": null,
+        "format": null,
+        "options": null
+      },
+      {
+        "key": "valid",
+        "type": "string",
+        "required": false,
+        "array": false,
+        "default": null,
+        "size": 20,
+        "min": null,
+        "max": null,
+        "format": null,
+        "options": null
+      },
+      {
+        "key": "sender",
+        "type": "string",
+        "required": false,
+        "array": false,
+        "default": null,
+        "size": 40,
+        "min": null,
+        "max": null,
+        "format": null,
+        "options": null
+      },
+      {
+        "key": "date",
+        "type": "string",
+        "required": false,
+        "array": false,
+        "default": null,
+        "size": 24,
+        "min": null,
+        "max": null,
+        "format": null,
+        "options": null
+      }
+    ],
+    "indexes": []
+  },
+  {
+    "collection": {
+      "id": "coll-bookGenres",
+      "name": "bookGenres",
+      "documentSecurity": true,
+      "permissions": [
+      { "label": "admin", "actions": ["read", "create", "update", "delete"] },
+      { "label": "any", "actions": ["read", "create", "update", "delete"] }
+    ]
+    },
+    "attributes": [
+      {
+        "key": "name",
+        "type": "string",
+        "required": true,
+        "array": false,
+        "default": null,
+        "size": 100,
+        "min": null,
+        "max": null,
+        "format": null,
+        "options": null
+      },
+      {
+        "key": "description",
+        "type": "string",
+        "required": false,
+        "array": false,
+        "default": null,
+        "size": 255,
+        "min": null,
+        "max": null,
+        "format": null,
+        "options": null
+      }
+    ],
+    "indexes": []
+  },
+  {
+    "collection": {
+      "id": "coll-books",
+      "name": "books",
+      "documentSecurity": true,
+      "permissions": [
+      { "label": "admin", "actions": ["read", "create", "update", "delete"] },
+      { "label": "any", "actions": ["read"] },
+      { "label": "library", "actions": ["read", "create", "update", "delete"] }
+    ]
+    },
+    "attributes": [
+      {
+        "key": "customBookId",
+        "type": "string",
+        "required": true,
+        "array": false,
+        "default": null,
+        "size": 50,
+        "min": null,
+        "max": null,
+        "format": null,
+        "options": null
+      },
+      {
+        "key": "name",
+        "type": "string",
+        "required": true,
+        "array": false,
+        "default": null,
+        "size": 255,
+        "min": null,
+        "max": null,
+        "format": null,
+        "options": null
+      },
+      {
+        "key": "author",
+        "type": "string",
+        "required": true,
+        "array": false,
+        "default": null,
+        "size": 255,
+        "min": null,
+        "max": null,
+        "format": null,
+        "options": null
+      },
+      {
+        "key": "genreId",
+        "type": "string",
+        "required": true,
+        "array": false,
+        "default": null,
+        "size": 20,
+        "min": null,
+        "max": null,
+        "format": null,
+        "options": null
+      },
+      {
+        "key": "location",
+        "type": "string",
+        "required": false,
+        "array": false,
+        "default": null,
+        "size": 100,
+        "min": null,
+        "max": null,
+        "format": null,
+        "options": null
+      },
+      {
+        "key": "totalCopies",
+        "type": "integer",
+        "required": false,
+        "array": false,
+        "default": null,
+        "size": null,
+        "min": 1,
+        "max": 999999,
+        "format": null,
+        "options": null
+      },
+      {
+        "key": "availableCopies",
+        "type": "integer",
+        "required": false,
+        "array": false,
+        "default": null,
+        "size": null,
+        "min": 1,
+        "max": 999999,
+        "format": null,
+        "options": null
+      },
+      {
+        "key": "coverImageId",
+        "type": "string",
+        "required": false,
+        "array": false,
+        "default": null,
+        "size": 20,
+        "min": null,
+        "max": null,
+        "format": null,
+        "options": null
+      },
+      {
+        "key": "year",
+        "type": "string",
+        "required": false,
+        "array": false,
+        "default": null,
+        "size": 4,
+        "min": null,
+        "max": null,
+        "format": null,
+        "options": null
+      }
+    ],
+    "indexes": [
+      {
+        "key": "indx_name",
+        "type": "fulltext",
+        "attributes": [
+          "name"
+        ],
+        "orders": [
+          "ASC"
+        ]
+      }
+    ]
+  },
+  {
+    "collection": {
+      "id": "coll-bookBorrowings",
+      "name": "bookBorrowings",
+      "documentSecurity": true,
+      "permissions": [
+      { "label": "admin", "actions": ["read", "create", "update", "delete"] },
+      { "label": "any", "actions": ["read"] },
+      { "label": "library", "actions": ["read", "create", "update", "delete"] }
+    ]
+    },
+    "attributes": [
+      {
+        "key": "bookId",
+        "type": "string",
+        "required": true,
+        "array": false,
+        "default": null,
+        "size": 20,
+        "min": null,
+        "max": null,
+        "format": null,
+        "options": null
+      },
+      {
+        "key": "userId",
+        "type": "string",
+        "required": true,
+        "array": false,
+        "default": null,
+        "size": 20,
+        "min": null,
+        "max": null,
+        "format": null,
+        "options": null
+      },
+      {
+        "key": "userType",
+        "type": "string",
+        "required": true,
+        "array": false,
+        "default": null,
+        "size": 20,
+        "min": null,
+        "max": null,
+        "format": null,
+        "options": null
+      },
+      {
+        "key": "borrowDate",
+        "type": "string",
+        "required": true,
+        "array": false,
+        "default": null,
+        "size": 30,
+        "min": null,
+        "max": null,
+        "format": null,
+        "options": null
+      },
+      {
+        "key": "dueDate",
+        "type": "string",
+        "required": true,
+        "array": false,
+        "default": null,
+        "size": 30,
+        "min": null,
+        "max": null,
+        "format": null,
+        "options": null
+      },
+      {
+        "key": "returnDate",
+        "type": "string",
+        "required": false,
+        "array": false,
+        "default": null,
+        "size": 30,
+        "min": null,
+        "max": null,
+        "format": null,
+        "options": null
+      },
+      {
+        "key": "status",
+        "type": "string",
+        "required": false,
+        "array": false,
+        "default": null,
+        "size": null,
+        "min": null,
+        "max": null,
+        "format": "enum",
+        "options": [
+          "borrowed",
+          "returned",
+          "overdue_calculated"
+        ]
+      },
+      {
+        "key": "borrowedByStaffEmail",
+        "type": "string",
+        "required": false,
+        "array": false,
+        "default": null,
+        "size": 50,
+        "min": null,
+        "max": null,
+        "format": null,
+        "options": null
+      },
+      {
+        "key": "returnedByStaffEmail",
+        "type": "string",
+        "required": false,
+        "array": false,
+        "default": null,
+        "size": 50,
+        "min": null,
+        "max": null,
+        "format": null,
+        "options": null
+      }
+    ],
+    "indexes": [
+      {
+        "key": "index_1",
+        "type": "fulltext",
+        "attributes": [
+          "bookId"
+        ],
+        "orders": [
+          "ASC"
+        ]
+      },
+      {
+        "key": "index_2",
+        "type": "fulltext",
+        "attributes": [
+          "userId"
+        ],
+        "orders": [
+          "ASC"
+        ]
+      },
+      {
+        "key": "index_3",
+        "type": "fulltext",
+        "attributes": [
+          "userType"
+        ],
+        "orders": [
+          "ASC"
+        ]
+      },
+      {
+        "key": "index_4",
+        "type": "fulltext",
+        "attributes": [
+          "status"
+        ],
+        "orders": [
+          "ASC"
+        ]
+      },
+      {
+        "key": "index_5",
+        "type": "fulltext",
+        "attributes": [
+          "dueDate"
+        ],
+        "orders": [
+          "ASC"
+        ]
+      }
+    ]
+  },
+  {
+    "collection": {
+      "id": "68316dd1002f05fcd202",
+      "name": "coll-marks",
+      "documentSecurity": true,
+      "permissions": [
+      { "label": "admin", "actions": ["read", "create", "update", "delete"] },
+      { "label": "any", "actions": ["read"] },
+      { "label": "teacher", "actions": ["read", "create", "update", "delete"] }
+    ]
+    },
+    "attributes": [
+      {
+        "key": "examId",
+        "type": "string",
+        "required": true,
+        "array": false,
+        "default": null,
+        "size": 30,
+        "min": null,
+        "max": null,
+        "format": null,
+        "options": null
+      },
+      {
+        "key": "studentId",
+        "type": "string",
+        "required": false,
+        "array": false,
+        "default": null,
+        "size": 20,
+        "min": null,
+        "max": null,
+        "format": null,
+        "options": null
+      },
+      {
+        "key": "classId",
+        "type": "string",
+        "required": false,
+        "array": false,
+        "default": null,
+        "size": 20,
+        "min": null,
+        "max": null,
+        "format": null,
+        "options": null
+      },
+      {
+        "key": "sectionId",
+        "type": "string",
+        "required": false,
+        "array": false,
+        "default": null,
+        "size": 20,
+        "min": null,
+        "max": null,
+        "format": null,
+        "options": null
+      },
+      {
+        "key": "subjectName",
+        "type": "string",
+        "required": false,
+        "array": false,
+        "default": null,
+        "size": 25,
+        "min": null,
+        "max": null,
+        "format": null,
+        "options": null
+      },
+      {
+        "key": "theoryMarksObtained",
+        "type": "double",
+        "required": false,
+        "array": false,
+        "default": null,
+        "size": null,
+        "min": 0,
+        "max": 100,
+        "format": null,
+        "options": null
+      },
+      {
+        "key": "practicalMarksObtained",
+        "type": "double",
+        "required": false,
+        "array": false,
+        "default": null,
+        "size": null,
+        "min": 0,
+        "max": 100,
+        "format": null,
+        "options": null
+      },
+      {
+        "key": "isAbsent",
+        "type": "boolean",
+        "required": false,
+        "array": false,
+        "default": null,
+        "size": null,
+        "min": null,
+        "max": null,
+        "format": null,
+        "options": null
+      },
+      {
+        "key": "updatedBy",
+        "type": "string",
+        "required": false,
+        "array": false,
+        "default": null,
+        "size": 50,
+        "min": null,
+        "max": null,
+        "format": null,
+        "options": null
+      },
+      {
+        "key": "lastUpdatedAt",
+        "type": "string",
+        "required": false,
+        "array": false,
+        "default": null,
+        "size": 40,
+        "min": null,
+        "max": null,
+        "format": null,
+        "options": null
+      }
+    ],
+    "indexes": [
+      {
+        "key": "index_1",
+        "type": "key",
+        "attributes": [
+          "examId"
+        ],
+        "orders": [
+          "ASC"
+        ]
+      },
+      {
+        "key": "index_2",
+        "type": "key",
+        "attributes": [
+          "studentId"
+        ],
+        "orders": [
+          "ASC"
+        ]
+      },
+      {
+        "key": "index_3",
+        "type": "key",
+        "attributes": [
+          "classId"
+        ],
+        "orders": [
+          "ASC"
+        ]
+      },
+      {
+        "key": "index_4",
+        "type": "key",
+        "attributes": [
+          "sectionId"
+        ],
+        "orders": [
+          "ASC"
+        ]
+      },
+      {
+        "key": "index_5",
+        "type": "key",
+        "attributes": [
+          "subjectName"
+        ],
+        "orders": [
+          "ASC"
+        ]
+      }
+    ]
+  },
+  {
+    "collection": {
+      "id": "coll-assignment",
+      "name": "assignment",
+      "documentSecurity": true,
+      "permissions": [
+      { "label": "admin", "actions": ["read", "create", "update", "delete"] },
+      { "label": "any", "actions": ["read"] },
+      { "label": "teacher", "actions": ["read", "create", "update", "delete"] }
+    ]
+    },
+    "attributes": [
+      {
+        "key": "title",
+        "type": "string",
+        "required": false,
+        "array": false,
+        "default": null,
+        "size": 100,
+        "min": null,
+        "max": null,
+        "format": null,
+        "options": null
+      },
+      {
+        "key": "description",
+        "type": "string",
+        "required": false,
+        "array": false,
+        "default": null,
+        "size": 1000,
+        "min": null,
+        "max": null,
+        "format": null,
+        "options": null
+      },
+      {
+        "key": "facultyId",
+        "type": "string",
+        "required": false,
+        "array": false,
+        "default": null,
+        "size": 20,
+        "min": null,
+        "max": null,
+        "format": null,
+        "options": null
+      },
+      {
+        "key": "className",
+        "type": "string",
+        "required": false,
+        "array": false,
+        "default": null,
+        "size": 20,
+        "min": null,
+        "max": null,
+        "format": null,
+        "options": null
+      },
+      {
+        "key": "sectionId",
+        "type": "string",
+        "required": false,
+        "array": false,
+        "default": null,
+        "size": 20,
+        "min": null,
+        "max": null,
+        "format": null,
+        "options": null
+      },
+      {
+        "key": "subjectName",
+        "type": "string",
+        "required": false,
+        "array": false,
+        "default": null,
+        "size": 30,
+        "min": null,
+        "max": null,
+        "format": null,
+        "options": null
+      },
+      {
+        "key": "assignedById",
+        "type": "string",
+        "required": false,
+        "array": false,
+        "default": null,
+        "size": 20,
+        "min": null,
+        "max": null,
+        "format": null,
+        "options": null
+      },
+      {
+        "key": "assignedByEmail",
+        "type": "string",
+        "required": false,
+        "array": false,
+        "default": null,
+        "size": 40,
+        "min": null,
+        "max": null,
+        "format": null,
+        "options": null
+      },
+      {
+        "key": "dateBS",
+        "type": "string",
+        "required": false,
+        "array": false,
+        "default": null,
+        "size": 30,
+        "min": null,
+        "max": null,
+        "format": null,
+        "options": null
+      },
+      {
+        "key": "dateAD",
+        "type": "string",
+        "required": false,
+        "array": false,
+        "default": null,
+        "size": 30,
+        "min": null,
+        "max": null,
+        "format": null,
+        "options": null
+      },
+      {
+        "key": "fileIds",
+        "type": "string",
+        "required": false,
+        "array": true,
+        "default": null,
+        "size": 30,
+        "min": null,
+        "max": null,
+        "format": null,
+        "options": null
+      },
+      {
+        "key": "fileNames",
+        "type": "string",
+        "required": false,
+        "array": true,
+        "default": null,
+        "size": 100,
+        "min": null,
+        "max": null,
+        "format": null,
+        "options": null
+      },
+      {
+        "key": "createdAt",
+        "type": "datetime",
+        "required": false,
+        "array": false,
+        "default": null,
+        "size": null,
+        "min": null,
+        "max": null,
+        "format": "",
+        "options": null
+      },
+      {
+        "key": "updatedAt",
+        "type": "datetime",
+        "required": false,
+        "array": false,
+        "default": null,
+        "size": null,
+        "min": null,
+        "max": null,
+        "format": "",
+        "options": null
+      },
+      {
+        "key": "status",
+        "type": "string",
+        "required": false,
+        "array": false,
+        "default": null,
+        "size": 20,
+        "min": null,
+        "max": null,
+        "format": null,
+        "options": null
+      },
+      {
+        "key": "sectionName",
+        "type": "string",
+        "required": false,
+        "array": false,
+        "default": null,
+        "size": 20,
+        "min": null,
+        "max": null,
+        "format": null,
+        "options": null
+      }
+    ],
+    "indexes": []
+  },
+  {
+    "collection": {
+      "id": "coll-notes",
+      "name": "notes",
+      "documentSecurity": true,
+      "permissions": [
+      { "label": "admin", "actions": ["read", "create", "update", "delete"] },
+      { "label": "any", "actions": ["read"] },
+      { "label": "teacher", "actions": ["read", "create", "update", "delete"] }
+    ]
+    },
+    "attributes": [
+      {
+        "key": "title",
+        "type": "string",
+        "required": false,
+        "array": false,
+        "default": null,
+        "size": 100,
+        "min": null,
+        "max": null,
+        "format": null,
+        "options": null
+      },
+      {
+        "key": "description",
+        "type": "string",
+        "required": false,
+        "array": false,
+        "default": null,
+        "size": 500,
+        "min": null,
+        "max": null,
+        "format": null,
+        "options": null
+      },
+      {
+        "key": "noteDate",
+        "type": "datetime",
+        "required": false,
+        "array": false,
+        "default": null,
+        "size": null,
+        "min": null,
+        "max": null,
+        "format": "",
+        "options": null
+      },
+      {
+        "key": "facultyId",
+        "type": "string",
+        "required": false,
+        "array": false,
+        "default": null,
+        "size": 20,
+        "min": null,
+        "max": null,
+        "format": null,
+        "options": null
+      },
+      {
+        "key": "facultyName",
+        "type": "string",
+        "required": false,
+        "array": false,
+        "default": null,
+        "size": 25,
+        "min": null,
+        "max": null,
+        "format": null,
+        "options": null
+      },
+      {
+        "key": "className",
+        "type": "string",
+        "required": false,
+        "array": false,
+        "default": null,
+        "size": 20,
+        "min": null,
+        "max": null,
+        "format": null,
+        "options": null
+      },
+      {
+        "key": "sectionId",
+        "type": "string",
+        "required": false,
+        "array": false,
+        "default": null,
+        "size": 20,
+        "min": null,
+        "max": null,
+        "format": null,
+        "options": null
+      },
+      {
+        "key": "sectionName",
+        "type": "string",
+        "required": false,
+        "array": false,
+        "default": null,
+        "size": 20,
+        "min": null,
+        "max": null,
+        "format": null,
+        "options": null
+      },
+      {
+        "key": "subject",
+        "type": "string",
+        "required": false,
+        "array": false,
+        "default": null,
+        "size": 30,
+        "min": null,
+        "max": null,
+        "format": null,
+        "options": null
+      },
+      {
+        "key": "fileIds",
+        "type": "string",
+        "required": false,
+        "array": true,
+        "default": null,
+        "size": 20,
+        "min": null,
+        "max": null,
+        "format": null,
+        "options": null
+      },
+      {
+        "key": "fileNames",
+        "type": "string",
+        "required": false,
+        "array": true,
+        "default": null,
+        "size": 100,
+        "min": null,
+        "max": null,
+        "format": null,
+        "options": null
+      },
+      {
+        "key": "fileMimeTypes",
+        "type": "string",
+        "required": false,
+        "array": true,
+        "default": null,
+        "size": 50,
+        "min": null,
+        "max": null,
+        "format": null,
+        "options": null
+      },
+      {
+        "key": "uploadedById",
+        "type": "string",
+        "required": false,
+        "array": false,
+        "default": null,
+        "size": 20,
+        "min": null,
+        "max": null,
+        "format": null,
+        "options": null
+      },
+      {
+        "key": "uploaderEmail",
+        "type": "string",
+        "required": false,
+        "array": false,
+        "default": null,
+        "size": 50,
+        "min": null,
+        "max": null,
+        "format": null,
+        "options": null
+      }
+    ],
+    "indexes": [
+      {
+        "key": "index_1",
+        "type": "fulltext",
+        "attributes": [
+          "title"
+        ],
+        "orders": [
+          "ASC"
+        ]
+      },
+      {
+        "key": "index_2",
+        "type": "fulltext",
+        "attributes": [
+          "description"
+        ],
+        "orders": [
+          "ASC"
+        ]
+      },
+      {
+        "key": "index_3",
+        "type": "key",
+        "attributes": [
+          "noteDate"
+        ],
+        "orders": [
+          "ASC"
+        ]
+      },
+      {
+        "key": "index_4",
+        "type": "key",
+        "attributes": [
+          "facultyId"
+        ],
+        "orders": [
+          "ASC"
+        ]
+      },
+      {
+        "key": "index_5",
+        "type": "key",
+        "attributes": [
+          "className"
+        ],
+        "orders": [
+          "ASC"
+        ]
+      },
+      {
+        "key": "index_6",
+        "type": "key",
+        "attributes": [
+          "facultyName"
+        ],
+        "orders": [
+          "ASC"
+        ]
+      },
+      {
+        "key": "index_7",
+        "type": "key",
+        "attributes": [
+          "sectionId"
+        ],
+        "orders": [
+          "ASC"
+        ]
+      },
+      {
+        "key": "index_8",
+        "type": "key",
+        "attributes": [
+          "sectionName"
+        ],
+        "orders": [
+          "ASC"
+        ]
+      },
+      {
+        "key": "index_9",
+        "type": "fulltext",
+        "attributes": [
+          "subject"
+        ],
+        "orders": [
+          "ASC"
+        ]
+      },
+      {
+        "key": "index_10",
+        "type": "key",
+        "attributes": [
+          "uploadedById"
+        ],
+        "orders": [
+          "ASC"
+        ]
+      },
+      {
+        "key": "index_11",
+        "type": "key",
+        "attributes": [
+          "uploaderEmail"
+        ],
+        "orders": [
+          "ASC"
+        ]
+      }
+    ]
+  },
+  {
+    "collection": {
+      "id": "coll-lesson-plan",
+      "name": "Lesson Plan",
+      "documentSecurity": true,
+      "permissions": [
+      { "label": "admin", "actions": ["read", "create", "update", "delete"] },
+      { "label": "any", "actions": ["read"] },
+      { "label": "teacher", "actions": ["read", "create", "update", "delete"] }
+    ]
+    },
+    "attributes": [
+      {
+        "key": "teacherId",
+        "type": "string",
+        "required": false,
+        "array": false,
+        "default": null,
+        "size": 20,
+        "min": null,
+        "max": null,
+        "format": null,
+        "options": null
+      },
+      {
+        "key": "facultyId",
+        "type": "string",
+        "required": false,
+        "array": false,
+        "default": null,
+        "size": 20,
+        "min": null,
+        "max": null,
+        "format": null,
+        "options": null
+      },
+      {
+        "key": "class",
+        "type": "string",
+        "required": false,
+        "array": false,
+        "default": null,
+        "size": 20,
+        "min": null,
+        "max": null,
+        "format": null,
+        "options": null
+      },
+      {
+        "key": "sectionId",
+        "type": "string",
+        "required": false,
+        "array": false,
+        "default": null,
+        "size": 20,
+        "min": null,
+        "max": null,
+        "format": null,
+        "options": null
+      },
+      {
+        "key": "subject",
+        "type": "string",
+        "required": false,
+        "array": false,
+        "default": null,
+        "size": 25,
+        "min": null,
+        "max": null,
+        "format": null,
+        "options": null
+      },
+      {
+        "key": "title",
+        "type": "string",
+        "required": false,
+        "array": false,
+        "default": null,
+        "size": 150,
+        "min": null,
+        "max": null,
+        "format": null,
+        "options": null
+      },
+      {
+        "key": "description",
+        "type": "string",
+        "required": false,
+        "array": false,
+        "default": null,
+        "size": 5000,
+        "min": null,
+        "max": null,
+        "format": null,
+        "options": null
+      },
+      {
+        "key": "lessonDateBS",
+        "type": "string",
+        "required": false,
+        "array": false,
+        "default": null,
+        "size": 20,
+        "min": null,
+        "max": null,
+        "format": null,
+        "options": null
+      },
+      {
+        "key": "lessonDateAD",
+        "type": "datetime",
+        "required": false,
+        "array": false,
+        "default": null,
+        "size": null,
+        "min": null,
+        "max": null,
+        "format": "",
+        "options": null
+      },
+      {
+        "key": "estimatedPeriods",
+        "type": "integer",
+        "required": false,
+        "array": false,
+        "default": null,
+        "size": null,
+        "min": 0,
+        "max": 1000,
+        "format": null,
+        "options": null
+      },
+      {
+        "key": "learningObjectives",
+        "type": "string",
+        "required": false,
+        "array": true,
+        "default": null,
+        "size": 255,
+        "min": null,
+        "max": null,
+        "format": null,
+        "options": null
+      },
+      {
+        "key": "topicsCovered",
+        "type": "string",
+        "required": false,
+        "array": true,
+        "default": null,
+        "size": 255,
+        "min": null,
+        "max": null,
+        "format": null,
+        "options": null
+      },
+      {
+        "key": "teachingActivities",
+        "type": "string",
+        "required": false,
+        "array": true,
+        "default": null,
+        "size": 255,
+        "min": null,
+        "max": null,
+        "format": null,
+        "options": null
+      },
+      {
+        "key": "resourcesNeeded",
+        "type": "string",
+        "required": false,
+        "array": true,
+        "default": null,
+        "size": 255,
+        "min": null,
+        "max": null,
+        "format": null,
+        "options": null
+      },
+      {
+        "key": "assessmentMethods",
+        "type": "string",
+        "required": false,
+        "array": true,
+        "default": null,
+        "size": 255,
+        "min": null,
+        "max": null,
+        "format": null,
+        "options": null
+      },
+      {
+        "key": "homeworkAssignment",
+        "type": "string",
+        "required": false,
+        "array": false,
+        "default": null,
+        "size": 1000,
+        "min": null,
+        "max": null,
+        "format": null,
+        "options": null
+      },
+      {
+        "key": "status",
+        "type": "string",
+        "required": false,
+        "array": false,
+        "default": null,
+        "size": 50,
+        "min": null,
+        "max": null,
+        "format": null,
+        "options": null
+      },
+      {
+        "key": "actualPeriodsTaken",
+        "type": "integer",
+        "required": false,
+        "array": false,
+        "default": null,
+        "size": null,
+        "min": 0,
+        "max": 100,
+        "format": null,
+        "options": null
+      },
+      {
+        "key": "completionDateAD",
+        "type": "datetime",
+        "required": false,
+        "array": false,
+        "default": null,
+        "size": null,
+        "min": null,
+        "max": null,
+        "format": "",
+        "options": null
+      },
+      {
+        "key": "teacherReflection",
+        "type": "string",
+        "required": false,
+        "array": false,
+        "default": null,
+        "size": 5000,
+        "min": null,
+        "max": null,
+        "format": null,
+        "options": null
+      },
+      {
+        "key": "teachingMaterials",
+        "type": "string",
+        "required": false,
+        "array": true,
+        "default": null,
+        "size": 255,
+        "min": null,
+        "max": null,
+        "format": null,
+        "options": null
+      },
+      {
+        "key": "overallClassRating",
+        "type": "integer",
+        "required": false,
+        "array": false,
+        "default": null,
+        "size": null,
+        "min": 0,
+        "max": 5,
+        "format": null,
+        "options": null
+      },
+      {
+        "key": "isPublic",
+        "type": "boolean",
+        "required": false,
+        "array": false,
+        "default": null,
+        "size": null,
+        "min": null,
+        "max": null,
+        "format": null,
+        "options": null
+      }
+    ],
+    "indexes": [
+      {
+        "key": "index_1",
+        "type": "key",
+        "attributes": [
+          "teacherId"
+        ],
+        "orders": [
+          "ASC"
+        ]
+      },
+      {
+        "key": "index_2",
+        "type": "key",
+        "attributes": [
+          "facultyId"
+        ],
+        "orders": [
+          "ASC"
+        ]
+      },
+      {
+        "key": "index_3",
+        "type": "key",
+        "attributes": [
+          "class"
+        ],
+        "orders": [
+          "ASC"
+        ]
+      },
+      {
+        "key": "index_4",
+        "type": "key",
+        "attributes": [
+          "sectionId"
+        ],
+        "orders": [
+          "ASC"
+        ]
+      },
+      {
+        "key": "index_5",
+        "type": "key",
+        "attributes": [
+          "subject"
+        ],
+        "orders": [
+          "ASC"
+        ]
+      },
+      {
+        "key": "index_6",
+        "type": "fulltext",
+        "attributes": [
+          "title"
+        ],
+        "orders": [
+          "ASC"
+        ]
+      },
+      {
+        "key": "index_7",
+        "type": "key",
+        "attributes": [
+          "lessonDateAD"
+        ],
+        "orders": [
+          "ASC"
+        ]
+      },
+      {
+        "key": "index_8",
+        "type": "key",
+        "attributes": [
+          "status"
+        ],
+        "orders": [
+          "ASC"
+        ]
+      }
+    ]
+  },
+  {
+    "collection": {
+      "id": "coll-lesson-student-review",
+      "name": "Lesson student revire",
+      "documentSecurity": true,
+      "permissions": [
+      { "label": "admin", "actions": ["read", "create", "update", "delete"] },
+      { "label": "any", "actions": ["read"] },
+      { "label": "teacher", "actions": ["read", "create", "update", "delete"] }
+    ]
+    },
+    "attributes": [
+      {
+        "key": "lessonPlanId",
+        "type": "string",
+        "required": false,
+        "array": false,
+        "default": null,
+        "size": 25,
+        "min": null,
+        "max": null,
+        "format": null,
+        "options": null
+      },
+      {
+        "key": "studentId",
+        "type": "string",
+        "required": false,
+        "array": false,
+        "default": null,
+        "size": 20,
+        "min": null,
+        "max": null,
+        "format": null,
+        "options": null
+      },
+      {
+        "key": "teacherId",
+        "type": "string",
+        "required": false,
+        "array": false,
+        "default": null,
+        "size": 20,
+        "min": null,
+        "max": null,
+        "format": null,
+        "options": null
+      },
+      {
+        "key": "rating",
+        "type": "integer",
+        "required": false,
+        "array": false,
+        "default": null,
+        "size": null,
+        "min": 1,
+        "max": 5,
+        "format": null,
+        "options": null
+      },
+      {
+        "key": "comment",
+        "type": "string",
+        "required": false,
+        "array": false,
+        "default": null,
+        "size": 1000,
+        "min": null,
+        "max": null,
+        "format": null,
+        "options": null
+      }
+    ],
+    "indexes": []
+  },
+  {
+    "collection": {
+      "id": "coll-gallery-groups",
+      "name": "gallery-groups",
+      "documentSecurity": true,
+      "permissions": [
+      { "label": "admin", "actions": ["read", "create", "update", "delete"] },
+      { "label": "any", "actions": ["read"] }
+    ]
+    },
+    "attributes": [
+      {
+        "key": "title",
+        "type": "string",
+        "required": false,
+        "array": false,
+        "default": null,
+        "size": 100,
+        "min": null,
+        "max": null,
+        "format": null,
+        "options": null
+      },
+      {
+        "key": "description",
+        "type": "string",
+        "required": false,
+        "array": false,
+        "default": null,
+        "size": 1000,
+        "min": null,
+        "max": null,
+        "format": null,
+        "options": null
+      },
+      {
+        "key": "visibleTo",
+        "type": "string",
+        "required": false,
+        "array": false,
+        "default": null,
+        "size": 50,
+        "min": null,
+        "max": null,
+        "format": null,
+        "options": null
+      },
+      {
+        "key": "coverImageFileId",
+        "type": "string",
+        "required": false,
+        "array": false,
+        "default": null,
+        "size": 50,
+        "min": null,
+        "max": null,
+        "format": null,
+        "options": null
+      },
+      {
+        "key": "photoCount",
+        "type": "integer",
+        "required": false,
+        "array": false,
+        "default": null,
+        "size": null,
+        "min": 0,
+        "max": 5000,
+        "format": null,
+        "options": null
+      },
+      {
+        "key": "createdBy",
+        "type": "string",
+        "required": false,
+        "array": false,
+        "default": null,
+        "size": 50,
+        "min": null,
+        "max": null,
+        "format": null,
+        "options": null
+      },
+      {
+        "key": "updatedBy",
+        "type": "string",
+        "required": false,
+        "array": false,
+        "default": null,
+        "size": 50,
+        "min": null,
+        "max": null,
+        "format": null,
+        "options": null
+      }
+    ],
+    "indexes": [
+      {
+        "key": "index_1",
+        "type": "fulltext",
+        "attributes": [
+          "title"
+        ],
+        "orders": [
+          "ASC"
+        ]
+      }
+    ]
+  },
+  {
+    "collection": {
+      "id": "coll-gallery-photos",
+      "name": "Gallery photo",
+      "documentSecurity": true,
+      "permissions": [
+      { "label": "admin", "actions": ["read", "create", "update", "delete"] },
+      { "label": "any", "actions": ["read"] }
+    ]
+    },
+    "attributes": [
+      {
+        "key": "groupId",
+        "type": "string",
+        "required": false,
+        "array": false,
+        "default": null,
+        "size": 50,
+        "min": null,
+        "max": null,
+        "format": null,
+        "options": null
+      },
+      {
+        "key": "fileId",
+        "type": "string",
+        "required": false,
+        "array": false,
+        "default": null,
+        "size": 50,
+        "min": null,
+        "max": null,
+        "format": null,
+        "options": null
+      },
+      {
+        "key": "fileName",
+        "type": "string",
+        "required": false,
+        "array": false,
+        "default": null,
+        "size": 100,
+        "min": null,
+        "max": null,
+        "format": null,
+        "options": null
+      },
+      {
+        "key": "caption",
+        "type": "string",
+        "required": false,
+        "array": false,
+        "default": null,
+        "size": 500,
+        "min": null,
+        "max": null,
+        "format": null,
+        "options": null
+      },
+      {
+        "key": "uploadedBy",
+        "type": "string",
+        "required": false,
+        "array": false,
+        "default": null,
+        "size": 50,
+        "min": null,
+        "max": null,
+        "format": null,
+        "options": null
+      },
+      {
+        "key": "order",
+        "type": "integer",
+        "required": false,
+        "array": false,
+        "default": null,
+        "size": null,
+        "min": 0,
+        "max": 5000,
+        "format": null,
+        "options": null
+      }
+    ],
+    "indexes": []
+  },
+  {
+    "collection": {
+      "id": "coll-reviews",
+      "name": "student review",
+      "documentSecurity": true,
+      "permissions": [
+      { "label": "admin", "actions": ["read", "create", "update", "delete"] },
+      { "label": "any", "actions": ["read"] },
+      { "label": "teacher", "actions": ["read", "create", "update", "delete"] }
+    ]
+    },
+    "attributes": [
+      {
+        "key": "studentId",
+        "type": "string",
+        "required": false,
+        "array": false,
+        "default": null,
+        "size": 20,
+        "min": null,
+        "max": null,
+        "format": null,
+        "options": null
+      },
+      {
+        "key": "teacherId",
+        "type": "string",
+        "required": false,
+        "array": false,
+        "default": null,
+        "size": 52,
+        "min": null,
+        "max": null,
+        "format": null,
+        "options": null
+      },
+      {
+        "key": "sectionId",
+        "type": "string",
+        "required": false,
+        "array": false,
+        "default": null,
+        "size": 20,
+        "min": null,
+        "max": null,
+        "format": null,
+        "options": null
+      },
+      {
+        "key": "type",
+        "type": "string",
+        "required": false,
+        "array": false,
+        "default": null,
+        "size": 20,
+        "min": null,
+        "max": null,
+        "format": null,
+        "options": null
+      },
+      {
+        "key": "description",
+        "type": "string",
+        "required": false,
+        "array": false,
+        "default": null,
+        "size": 1000,
+        "min": null,
+        "max": null,
+        "format": null,
+        "options": null
+      },
+      {
+        "key": "rating",
+        "type": "string",
+        "required": false,
+        "array": false,
+        "default": null,
+        "size": 20,
+        "min": null,
+        "max": null,
+        "format": null,
+        "options": null
+      },
+      {
+        "key": "reviewDate",
+        "type": "datetime",
+        "required": false,
+        "array": false,
+        "default": null,
+        "size": null,
+        "min": null,
+        "max": null,
+        "format": "",
+        "options": null
+      },
+      {
+        "key": "academicYear",
+        "type": "string",
+        "required": false,
+        "array": false,
+        "default": null,
+        "size": 20,
+        "min": null,
+        "max": null,
+        "format": null,
+        "options": null
+      }
+    ],
+    "indexes": []
+  }
+]
