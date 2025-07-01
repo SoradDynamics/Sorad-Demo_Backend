@@ -21,9 +21,17 @@ const PORT = process.env.PORT || 3001;
 const HOST = '0.0.0.0'; // IMPORTANT
 
 // --- Middleware ---
-app.use(cors()); 
+// ✅ Apply CORS BEFORE routes
+app.use(cors({
+  origin: 'https://school.soraddynamics.com',
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  credentials: true // if you're using cookies/auth headers
+}));
+
+// Optional: handle preflight requests explicitly
+app.options('*', cors());
+
 app.use(express.json());
-// app.use(cors({ origin: 'http://localhost:5173' })); // Adjust to your frontend URL
 
 // app.use(populateUserOptional);
 // //console.log('[App.js] populateUserOptional middleware applied globally.');
