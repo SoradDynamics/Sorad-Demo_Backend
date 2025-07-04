@@ -22,13 +22,26 @@ const HOST = '0.0.0.0'; // IMPORTANT
 
 // --- Middleware ---
 // ✅ Apply CORS BEFORE routes
+const allowedOrigins = [
+  'http://localhost:5173',             // Local dev
+  'https://school.soraddynamics.com',  // Production
+  'app://.'                            // Tauri
+];
+
 app.use(cors({
-  origin: 'https://school.soraddynamics.com',
+  origin: function (origin, callback) {
+    if (!origin) return callback(null, true); // Allow non-browser tools
+    if (allowedOrigins.includes(origin)) {
+      return callback(null, true);
+    }
+    console.warn('❌ Blocked by CORS:', origin);
+    return callback(new Error('CORS not allowed from this origin: ' + origin));
+  },
+  credentials: true,
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
-  credentials: true // if you're using cookies/auth headers
 }));
 
-// Optional: handle preflight requests explicitly
+// Optional: handle preflight for all routes
 app.options('*', cors());
 
 app.use(express.json());
